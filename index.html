@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Smart Career Orientation Quiz</title>
+  <title>Smart CFC Career Orientation Quiz</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -58,21 +58,23 @@
 </head>
 <body>
   <div class="container">
-    <h1>Smart Career Orientation Quiz</h1>
+    <h1>Smart CFC Career Orientation Quiz</h1>
     <form id="quizForm">
-      <!-- Q1: Domain -->
+      <!-- Q1: Field of Interest -->
       <div class="question">
         <h3>1. What subjects or fields do you find most interesting?</h3>
         <div class="options">
-          <label><input type="radio" name="q1" value="Technology"> Technology</label>
+          <label><input type="radio" name="q1" value="Transports"> Transports & Logistics</label>
+          <label><input type="radio" name="q1" value="Media"> Media & Communication</label>
           <label><input type="radio" name="q1" value="Healthcare"> Healthcare</label>
-          <label><input type="radio" name="q1" value="Media"> Media</label>
-          <label><input type="radio" name="q1" value="Logistics"> Logistics</label>
-          <label><input type="radio" name="q1" value="Arts"> Arts</label>
-          <label><input type="radio" name="q1" value="Other"> Other (e.g., Food, Economy)</label>
+          <label><input type="radio" name="q1" value="Building"> Building & Construction</label>
+          <label><input type="radio" name="q1" value="Food"> Food & Culinary</label>
+          <label><input type="radio" name="q1" value="Arts"> Arts & Creative Industries</label>
+          <label><input type="radio" name="q1" value="Technology"> Technology & Mechanics</label>
+          <label><input type="radio" name="q1" value="Hospitality"> Hospitality</label>
         </div>
       </div>
-
+      
       <!-- Q2: Training Approach -->
       <div class="question">
         <h3>2. Do you prefer a hands-on practical training approach or a theoretical learning approach?</h3>
@@ -81,123 +83,113 @@
           <label><input type="radio" name="q2" value="Theoretical"> Theoretical learning</label>
         </div>
       </div>
-
-      <!-- Q3: Training Duration -->
+      
+      <!-- Q3: Customer Interaction -->
       <div class="question">
-        <h3>3. Would you prefer a shorter training program (2 years - AFP) or a longer one (3 years - CFC)?</h3>
+        <h3>3. Do you prefer roles with direct customer interaction or behind-the-scenes roles?</h3>
         <div class="options">
-          <label><input type="radio" name="q3" value="AFP"> Shorter training (2 years - AFP)</label>
-          <label><input type="radio" name="q3" value="CFC"> Longer training (3 years - CFC)</label>
+          <label><input type="radio" name="q3" value="Direct"> Direct customer interaction</label>
+          <label><input type="radio" name="q3" value="Behind the Scenes"> Behind-the-scenes roles</label>
         </div>
       </div>
-
-      <!-- Q4: Customer Interaction -->
+      
+      <!-- Q4: Work Style -->
       <div class="question">
-        <h3>4. Do you prefer roles with direct customer interaction or behind-the-scenes roles?</h3>
+        <h3>4. Do you prefer creative work or analytical/technical tasks?</h3>
         <div class="options">
-          <label><input type="radio" name="q4" value="Direct"> Direct customer interaction</label>
-          <label><input type="radio" name="q4" value="Behind the Scenes"> Behind-the-scenes roles</label>
+          <label><input type="radio" name="q4" value="Creative"> Creative work</label>
+          <label><input type="radio" name="q4" value="Analytical"> Analytical/technical tasks</label>
         </div>
       </div>
-
-      <!-- Q5: Work Style -->
+      
+      <!-- Q5: Teamwork -->
       <div class="question">
-        <h3>5. Do you prefer creative work or analytical/technical tasks?</h3>
+        <h3>5. Do you prefer working independently or as part of a team?</h3>
         <div class="options">
-          <label><input type="radio" name="q5" value="Creative"> Creative work</label>
-          <label><input type="radio" name="q5" value="Analytical"> Analytical/technical tasks</label>
+          <label><input type="radio" name="q5" value="Independent"> Independently</label>
+          <label><input type="radio" name="q5" value="Team"> As part of a team</label>
         </div>
       </div>
-
-      <!-- Q6: Teamwork -->
+      
+      <!-- Q6: Work Setting -->
       <div class="question">
-        <h3>6. Do you prefer working independently or as part of a team?</h3>
+        <h3>6. What type of work setting do you envision?</h3>
         <div class="options">
-          <label><input type="radio" name="q6" value="Independent"> Independently</label>
-          <label><input type="radio" name="q6" value="Team"> As part of a team</label>
+          <label><input type="radio" name="q6" value="Office"> Office</label>
+          <label><input type="radio" name="q6" value="Workshop"> Workshop</label>
+          <label><input type="radio" name="q6" value="Laboratory"> Laboratory</label>
+          <label><input type="radio" name="q6" value="Outdoor"> Outdoor</label>
         </div>
       </div>
-
-      <!-- Q7: Work Setting -->
+      
+      <!-- Q7: Skill Level -->
       <div class="question">
-        <h3>7. What type of work setting do you envision?</h3>
+        <h3>7. How do you rate your problem-solving and communication skills?</h3>
         <div class="options">
-          <label><input type="radio" name="q7" value="Office"> Office</label>
-          <label><input type="radio" name="q7" value="Workshop"> Workshop</label>
-          <label><input type="radio" name="q7" value="Laboratory"> Laboratory</label>
-          <label><input type="radio" name="q7" value="Outdoor"> Outdoor</label>
+          <label><input type="radio" name="q7" value="High"> High</label>
+          <label><input type="radio" name="q7" value="Moderate"> Moderate</label>
+          <label><input type="radio" name="q7" value="Low"> Low</label>
         </div>
       </div>
-
-      <!-- Q8: Skill Level -->
+      
+      <!-- Q8: Stability -->
       <div class="question">
-        <h3>8. How do you rate your problem-solving and communication skills?</h3>
+        <h3>8. Are you interested in jobs offering stability and long-term career growth?</h3>
         <div class="options">
-          <label><input type="radio" name="q8" value="High"> High</label>
-          <label><input type="radio" name="q8" value="Moderate"> Moderate</label>
-          <label><input type="radio" name="q8" value="Low"> Low</label>
+          <label><input type="radio" name="q8" value="Yes"> Yes</label>
+          <label><input type="radio" name="q8" value="No"> No</label>
         </div>
       </div>
-
-      <!-- Q9: Stability -->
+      
+      <!-- Q9: Routine vs Varied Tasks -->
       <div class="question">
-        <h3>9. Are you interested in jobs offering stability and long-term career growth?</h3>
+        <h3>9. Do you prefer a profession with varied daily tasks or a structured routine?</h3>
         <div class="options">
-          <label><input type="radio" name="q9" value="Yes"> Yes</label>
-          <label><input type="radio" name="q9" value="No"> No</label>
+          <label><input type="radio" name="q9" value="Varied"> Varied daily tasks</label>
+          <label><input type="radio" name="q9" value="Structured"> Structured routine</label>
         </div>
       </div>
-
-      <!-- Q10: Routine vs Varied -->
+      
+      <!-- Q10: Continuous Learning -->
       <div class="question">
-        <h3>10. Do you prefer a profession with varied daily tasks or a structured routine?</h3>
+        <h3>10. How important is continuous learning and professional development to you?</h3>
         <div class="options">
-          <label><input type="radio" name="q10" value="Varied"> Varied daily tasks</label>
-          <label><input type="radio" name="q10" value="Structured"> Structured routine</label>
+          <label><input type="radio" name="q10" value="Very Important"> Very important</label>
+          <label><input type="radio" name="q10" value="Somewhat Important"> Somewhat important</label>
+          <label><input type="radio" name="q10" value="Not Important"> Not important</label>
         </div>
       </div>
-
-      <!-- Q11: Continuous Learning -->
+      
+      <!-- Q11: Industry Type -->
       <div class="question">
-        <h3>11. How important is continuous learning and professional development to you?</h3>
+        <h3>11. Do you see yourself working in a traditional industry or in modern digital/innovative fields?</h3>
         <div class="options">
-          <label><input type="radio" name="q11" value="Very Important"> Very important</label>
-          <label><input type="radio" name="q11" value="Somewhat Important"> Somewhat important</label>
-          <label><input type="radio" name="q11" value="Not Important"> Not important</label>
+          <label><input type="radio" name="q11" value="Traditional"> Traditional industry</label>
+          <label><input type="radio" name="q11" value="Innovative"> Modern digital/innovative fields</label>
         </div>
       </div>
-
-      <!-- Q12: Industry Type -->
+      
+      <!-- Q12: Exposure -->
       <div class="question">
-        <h3>12. Do you see yourself working in a traditional industry or in modern digital/innovative fields?</h3>
+        <h3>12. Would you prefer a career with international exposure or one that is more locally focused?</h3>
         <div class="options">
-          <label><input type="radio" name="q12" value="Traditional"> Traditional industry</label>
-          <label><input type="radio" name="q12" value="Innovative"> Modern digital/innovative fields</label>
+          <label><input type="radio" name="q12" value="International"> International exposure</label>
+          <label><input type="radio" name="q12" value="Local"> Locally focused</label>
         </div>
       </div>
-
-      <!-- Q13: Exposure -->
-      <div class="question">
-        <h3>13. Would you prefer a career with international exposure or one that is more locally focused?</h3>
-        <div class="options">
-          <label><input type="radio" name="q13" value="International"> International exposure</label>
-          <label><input type="radio" name="q13" value="Local"> Locally focused</label>
-        </div>
-      </div>
-
+      
       <button type="submit">Submit Quiz</button>
     </form>
     <div class="result" id="result" style="display: none;"></div>
   </div>
 
   <script>
-    // Sample job profiles (expand this list with all available professions)
+    // Sample list of CFC job profiles (extend this list with more CFC professions as needed)
     const jobs = [
       {
-        title: "Agent de transport ferroviaire",
-        domain: "Logistics",
+        title: "Agent de transport ferroviaire CFC",
+        domain: "Transports",
         trainingApproach: "Practical",
-        trainingType: "CFC",
         customerInteraction: "Behind the Scenes",
         workStyle: "Analytical",
         teamWork: "Team",
@@ -210,10 +202,9 @@
         exposure: "Local"
       },
       {
-        title: "Agent en information documentaire",
+        title: "Agent en information documentaire CFC",
         domain: "Media",
         trainingApproach: "Theoretical",
-        trainingType: "CFC",
         customerInteraction: "Direct",
         workStyle: "Analytical",
         teamWork: "Team",
@@ -226,10 +217,9 @@
         exposure: "Local"
       },
       {
-        title: "Assistant en pharmacie",
+        title: "Assistant en pharmacie CFC",
         domain: "Healthcare",
         trainingApproach: "Practical",
-        trainingType: "CFC",
         customerInteraction: "Direct",
         workStyle: "Analytical",
         teamWork: "Team",
@@ -242,10 +232,159 @@
         exposure: "Local"
       },
       {
-        title: "Graphiste",
+        title: "Automaticien CFC",
+        domain: "Technology",
+        trainingApproach: "Practical",
+        customerInteraction: "Behind the Scenes",
+        workStyle: "Analytical",
+        teamWork: "Team",
+        workSetting: "Workshop",
+        skillLevel: "High",
+        stability: "Yes",
+        routine: "Varied",
+        learning: "Very Important",
+        industry: "Innovative",
+        exposure: "International"
+      },
+      {
+        title: "Bijoutier-joaillier CFC",
+        domain: "Arts",
+        trainingApproach: "Practical",
+        customerInteraction: "Direct",
+        workStyle: "Creative",
+        teamWork: "Independent",
+        workSetting: "Workshop",
+        skillLevel: "Moderate",
+        stability: "Yes",
+        routine: "Varied",
+        learning: "Somewhat Important",
+        industry: "Traditional",
+        exposure: "Local"
+      },
+      {
+        title: "Boucher-charcutier CFC",
+        domain: "Food",
+        trainingApproach: "Practical",
+        customerInteraction: "Direct",
+        workStyle: "Analytical",
+        teamWork: "Team",
+        workSetting: "Workshop",
+        skillLevel: "Moderate",
+        stability: "Yes",
+        routine: "Structured",
+        learning: "Somewhat Important",
+        industry: "Traditional",
+        exposure: "Local"
+      },
+      {
+        title: "Boulanger-pâtissier-confiseur CFC",
+        domain: "Food",
+        trainingApproach: "Practical",
+        customerInteraction: "Direct",
+        workStyle: "Creative",
+        teamWork: "Team",
+        workSetting: "Workshop",
+        skillLevel: "Moderate",
+        stability: "Yes",
+        routine: "Structured",
+        learning: "Somewhat Important",
+        industry: "Traditional",
+        exposure: "Local"
+      },
+      {
+        title: "Capitaine de la navigation intérieure CFC",
+        domain: "Transports",
+        trainingApproach: "Practical",
+        customerInteraction: "Behind the Scenes",
+        workStyle: "Analytical",
+        teamWork: "Team",
+        workSetting: "Outdoor",
+        skillLevel: "High",
+        stability: "Yes",
+        routine: "Varied",
+        learning: "Very Important",
+        industry: "Traditional",
+        exposure: "International"
+      },
+      {
+        title: "Carreleur CFC",
+        domain: "Building",
+        trainingApproach: "Practical",
+        customerInteraction: "Direct",
+        workStyle: "Analytical",
+        teamWork: "Team",
+        workSetting: "Workshop",
+        skillLevel: "Moderate",
+        stability: "Yes",
+        routine: "Structured",
+        learning: "Somewhat Important",
+        industry: "Traditional",
+        exposure: "Local"
+      },
+      {
+        title: "Carrossier réparateur CFC",
+        domain: "Transports",
+        trainingApproach: "Practical",
+        customerInteraction: "Direct",
+        workStyle: "Analytical",
+        teamWork: "Team",
+        workSetting: "Workshop",
+        skillLevel: "Moderate",
+        stability: "Yes",
+        routine: "Varied",
+        learning: "Somewhat Important",
+        industry: "Traditional",
+        exposure: "Local"
+      },
+      {
+        title: "Coiffeur CFC",
+        domain: "Arts",
+        trainingApproach: "Practical",
+        customerInteraction: "Direct",
+        workStyle: "Creative",
+        teamWork: "Team",
+        workSetting: "Workshop",
+        skillLevel: "Moderate",
+        stability: "Yes",
+        routine: "Varied",
+        learning: "Somewhat Important",
+        industry: "Traditional",
+        exposure: "Local"
+      },
+      {
+        title: "Constructeur de bateaux CFC",
+        domain: "Transports",
+        trainingApproach: "Practical",
+        customerInteraction: "Behind the Scenes",
+        workStyle: "Analytical",
+        teamWork: "Team",
+        workSetting: "Workshop",
+        skillLevel: "High",
+        stability: "Yes",
+        routine: "Varied",
+        learning: "Very Important",
+        industry: "Traditional",
+        exposure: "International"
+      },
+      {
+        title: "Cuisinier CFC",
+        domain: "Hospitality",
+        trainingApproach: "Practical",
+        customerInteraction: "Direct",
+        workStyle: "Creative",
+        teamWork: "Team",
+        workSetting: "Workshop",
+        skillLevel: "Moderate",
+        stability: "Yes",
+        routine: "Structured",
+        learning: "Somewhat Important",
+        industry: "Traditional",
+        exposure: "Local"
+      },
+      {
+        title: "Graphiste CFC",
         domain: "Media",
         trainingApproach: "Practical",
-        trainingType: "CFC",
         customerInteraction: "Direct",
         workStyle: "Creative",
         teamWork: "Independent",
@@ -258,26 +397,9 @@
         exposure: "International"
       },
       {
-        title: "Coiffeur",
-        domain: "Arts",
-        trainingApproach: "Practical",
-        trainingType: "AFP",
-        customerInteraction: "Direct",
-        workStyle: "Creative",
-        teamWork: "Team",
-        workSetting: "Workshop",
-        skillLevel: "Moderate",
-        stability: "Yes",
-        routine: "Varied",
-        learning: "Somewhat Important",
-        industry: "Traditional",
-        exposure: "Local"
-      },
-      {
-        title: "Développeur de business numérique",
+        title: "Informaticien CFC",
         domain: "Technology",
         trainingApproach: "Practical",
-        trainingType: "CFC",
         customerInteraction: "Behind the Scenes",
         workStyle: "Analytical",
         teamWork: "Team",
@@ -290,12 +412,11 @@
         exposure: "International"
       },
       {
-        title: "Boulanger-pâtissier-confiseur",
-        domain: "Other",
+        title: "Maçon CFC",
+        domain: "Building",
         trainingApproach: "Practical",
-        trainingType: "AFP",
         customerInteraction: "Direct",
-        workStyle: "Creative",
+        workStyle: "Analytical",
         teamWork: "Team",
         workSetting: "Workshop",
         skillLevel: "Moderate",
@@ -304,40 +425,23 @@
         learning: "Somewhat Important",
         industry: "Traditional",
         exposure: "Local"
-      },
-      {
-        title: "Assistant en soins et santé communautaire",
-        domain: "Healthcare",
-        trainingApproach: "Practical",
-        trainingType: "CFC",
-        customerInteraction: "Direct",
-        workStyle: "Analytical",
-        teamWork: "Team",
-        workSetting: "Office",
-        skillLevel: "High",
-        stability: "Yes",
-        routine: "Structured",
-        learning: "Very Important",
-        industry: "Traditional",
-        exposure: "Local"
       }
     ];
-
-    // Mapping of quiz question names to job attribute keys
+    
+    // Map quiz question keys to job attribute keys
     const attributeMap = {
       q1: "domain",
       q2: "trainingApproach",
-      q3: "trainingType",
-      q4: "customerInteraction",
-      q5: "workStyle",
-      q6: "teamWork",
-      q7: "workSetting",
-      q8: "skillLevel",
-      q9: "stability",
-      q10: "routine",
-      q11: "learning",
-      q12: "industry",
-      q13: "exposure"
+      q3: "customerInteraction",
+      q4: "workStyle",
+      q5: "teamWork",
+      q6: "workSetting",
+      q7: "skillLevel",
+      q8: "stability",
+      q9: "routine",
+      q10: "learning",
+      q11: "industry",
+      q12: "exposure"
     };
 
     document.getElementById('quizForm').addEventListener('submit', function(e) {
@@ -345,7 +449,7 @@
       
       // Collect quiz answers
       let answers = {};
-      for (let i = 1; i <= 13; i++) {
+      for (let i = 1; i <= 12; i++) {
         let response = document.querySelector('input[name="q' + i + '"]:checked');
         answers["q" + i] = response ? response.value : null;
       }
@@ -364,12 +468,12 @@
       // Sort jobs by score (highest first)
       const sortedJobs = jobs.sort((a, b) => b.score - a.score);
       
-      // Show top 3 recommendations (you can adjust the number)
-      let resultHTML = '<h2>Your Top Career Recommendations</h2>';
+      // Display the top 3 recommendations
+      let resultHTML = '<h2>Your Top CFC Career Recommendations</h2>';
       resultHTML += '<p>Based on your responses, here are the careers that best match your preferences:</p>';
       resultHTML += '<ol>';
       sortedJobs.slice(0, 3).forEach(job => {
-        resultHTML += `<li><strong>${job.title}</strong> (Match Score: ${job.score}/13)</li>`;
+        resultHTML += `<li><strong>${job.title}</strong> (Match Score: ${job.score}/12)</li>`;
       });
       resultHTML += '</ol>';
       
