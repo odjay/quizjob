@@ -60,6 +60,7 @@
   <div class="container">
     <h1>Smart CFC Career Orientation Quiz</h1>
     <form id="quizForm">
+      <!-- Original 12 Questions -->
       <!-- Q1: Field of Interest -->
       <div class="question">
         <h3>1. What subjects or fields do you find most interesting?</h3>
@@ -178,13 +179,55 @@
         </div>
       </div>
       
+      <!-- Additional Questions for More Nuance -->
+      
+      <!-- Q13: Creativity Importance -->
+      <div class="question">
+        <h3>13. How important is creativity in your daily work?</h3>
+        <div class="options">
+          <label><input type="radio" name="q13" value="Essential"> Essential</label>
+          <label><input type="radio" name="q13" value="Important"> Important</label>
+          <label><input type="radio" name="q13" value="Not Important"> Not important</label>
+        </div>
+      </div>
+      
+      <!-- Q14: Preference for Physical Work -->
+      <div class="question">
+        <h3>14. How do you feel about physical work?</h3>
+        <div class="options">
+          <label><input type="radio" name="q14" value="Love It"> I love it</label>
+          <label><input type="radio" name="q14" value="Handle It"> I can handle it</label>
+          <label><input type="radio" name="q14" value="Prefer Sedentary"> I prefer sedentary work</label>
+        </div>
+      </div>
+      
+      <!-- Q15: Enjoyment of Numbers and Data -->
+      <div class="question">
+        <h3>15. Do you enjoy working with numbers and data?</h3>
+        <div class="options">
+          <label><input type="radio" name="q15" value="Love It"> Yes, I love it</label>
+          <label><input type="radio" name="q15" value="Sometimes"> Sometimes</label>
+          <label><input type="radio" name="q15" value="Not Really"> Not really</label>
+        </div>
+      </div>
+      
+      <!-- Q16: Work Schedule Preference -->
+      <div class="question">
+        <h3>16. How do you prefer your work schedule?</h3>
+        <div class="options">
+          <label><input type="radio" name="q16" value="Structured"> Structured</label>
+          <label><input type="radio" name="q16" value="Flexible"> Flexible</label>
+          <label><input type="radio" name="q16" value="No Preference"> No preference</label>
+        </div>
+      </div>
+      
       <button type="submit">Submit Quiz</button>
     </form>
     <div class="result" id="result" style="display: none;"></div>
   </div>
 
   <script>
-    // Sample list of CFC job profiles (extend this list with more CFC professions as needed)
+    // Sample list of CFC job profiles (this list can be expanded with more professions)
     const jobs = [
       {
         title: "Agent de transport ferroviaire CFC",
@@ -428,7 +471,7 @@
       }
     ];
     
-    // Map quiz question keys to job attribute keys
+    // Base mapping for questions 1-12 (direct 1:1 match)
     const attributeMap = {
       q1: "domain",
       q2: "trainingApproach",
@@ -447,22 +490,92 @@
     document.getElementById('quizForm').addEventListener('submit', function(e) {
       e.preventDefault();
       
-      // Collect quiz answers
+      // Collect answers for questions 1 to 16
       let answers = {};
-      for (let i = 1; i <= 12; i++) {
+      for (let i = 1; i <= 16; i++) {
         let response = document.querySelector('input[name="q' + i + '"]:checked');
         answers["q" + i] = response ? response.value : null;
       }
       
-      // Score each job based on matching attributes
-      jobs.forEach(job => {
-        let score = 0;
-        for (let key in attributeMap) {
+      // Initialize each job's score to 0
+      jobs.forEach(job => { job.score = 0; });
+      
+      // Base scoring from Q1 to Q12 (each match adds 1 point)
+      for (let key in attributeMap) {
+        jobs.forEach(job => {
           if (answers[key] && answers[key] === job[attributeMap[key]]) {
-            score++;
+            job.score += 1;
+          }
+        });
+      }
+      
+      // Additional weighted scoring for Q13 to Q16
+      
+      // Q13: Creativity importance
+      // If user answers "Essential" and job workStyle is "Creative": +2; "Important": +1; 
+      // Conversely, if user says "Not Important" and job workStyle is "Analytical": +1.
+      jobs.forEach(job => {
+        if (answers.q13) {
+          if (answers.q13 === "Essential" && job.workStyle === "Creative") {
+            job.score += 2;
+          } else if (answers.q13 === "Important" && job.workStyle === "Creative") {
+            job.score += 1;
+          } else if (answers.q13 === "Not Important" && job.workStyle === "Analytical") {
+            job.score += 1;
           }
         }
-        job.score = score;
+      });
+      
+      // Q14: Preference for physical work
+      // If user answers "I love it" and job workSetting is Workshop or Outdoor: +2;
+      // "I can handle it": +1 for Workshop/Outdoor;
+      // "I prefer sedentary" and job workSetting is Office or Laboratory: +2.
+      jobs.forEach(job => {
+        if (answers.q14) {
+          if (answers.q14 === "Love It" && (job.workSetting === "Workshop" || job.workSetting === "Outdoor")) {
+            job.score += 2;
+          } else if (answers.q14 === "Handle It" && (job.workSetting === "Workshop" || job.workSetting === "Outdoor")) {
+            job.score += 1;
+          } else if (answers.q14 === "Prefer Sedentary" && (job.workSetting === "Office" || job.workSetting === "Laboratory")) {
+            job.score += 2;
+          }
+        }
+      });
+      
+      // Q15: Enjoyment of numbers and data
+      // If "Yes, I love it" and job workStyle is Analytical: +2;
+      // "Sometimes": +1; if "Not really" and job workStyle is Creative: +1.
+      jobs.forEach(job => {
+        if (answers.q15) {
+          if (answers.q15 === "Love It" && job.workStyle === "Analytical") {
+            job.score += 2;
+          } else if (answers.q15 === "Sometimes" && job.workStyle === "Analytical") {
+            job.score += 1;
+          } else if (answers.q15 === "Not Really" && job.workStyle === "Creative") {
+            job.score += 1;
+          }
+        }
+      });
+      
+      // Q16: Work schedule preference
+      // If "Structured" and job routine is Structured: +2;
+      // If "Flexible" and job routine is Varied: +2;
+      // "No Preference": +1 regardless.
+      jobs.forEach(job => {
+        if (answers.q16) {
+          if (answers.q16 === "Structured" && job.routine === "Structured") {
+            job.score += 2;
+          } else if (answers.q16 === "Flexible" && job.routine === "Varied") {
+            job.score += 2;
+          } else if (answers.q16 === "No Preference") {
+            job.score += 1;
+          }
+        }
+      });
+      
+      // Add a small random factor to each job's score (to break ties)
+      jobs.forEach(job => {
+        job.score += Math.random() * 0.5;
       });
       
       // Sort jobs by score (highest first)
@@ -473,7 +586,7 @@
       resultHTML += '<p>Based on your responses, here are the careers that best match your preferences:</p>';
       resultHTML += '<ol>';
       sortedJobs.slice(0, 3).forEach(job => {
-        resultHTML += `<li><strong>${job.title}</strong> (Match Score: ${job.score}/12)</li>`;
+        resultHTML += `<li><strong>${job.title}</strong> (Score: ${job.score.toFixed(2)})</li>`;
       });
       resultHTML += '</ol>';
       
