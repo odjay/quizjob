@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smart Career Orientation Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    .question h3 {
+      margin-bottom: 10px;
+    }
+    .options label {
+      display: block;
+      margin-bottom: 5px;
+      cursor: pointer;
+    }
+    button {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    .result {
+      margin-top: 30px;
+      padding: 20px;
+      background: #e9ffe9;
+      border: 1px solid #b2d8b2;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Smart Career Orientation Quiz</h1>
+    <form id="quizForm">
+      <!-- Q1: Domain -->
+      <div class="question">
+        <h3>1. What subjects or fields do you find most interesting?</h3>
+        <div class="options">
+          <label><input type="radio" name="q1" value="Technology"> Technology</label>
+          <label><input type="radio" name="q1" value="Healthcare"> Healthcare</label>
+          <label><input type="radio" name="q1" value="Media"> Media</label>
+          <label><input type="radio" name="q1" value="Logistics"> Logistics</label>
+          <label><input type="radio" name="q1" value="Arts"> Arts</label>
+          <label><input type="radio" name="q1" value="Other"> Other (e.g., Food, Economy)</label>
+        </div>
+      </div>
+
+      <!-- Q2: Training Approach -->
+      <div class="question">
+        <h3>2. Do you prefer a hands-on practical training approach or a theoretical learning approach?</h3>
+        <div class="options">
+          <label><input type="radio" name="q2" value="Practical"> Hands-on practical training</label>
+          <label><input type="radio" name="q2" value="Theoretical"> Theoretical learning</label>
+        </div>
+      </div>
+
+      <!-- Q3: Training Duration -->
+      <div class="question">
+        <h3>3. Would you prefer a shorter training program (2 years - AFP) or a longer one (3 years - CFC)?</h3>
+        <div class="options">
+          <label><input type="radio" name="q3" value="AFP"> Shorter training (2 years - AFP)</label>
+          <label><input type="radio" name="q3" value="CFC"> Longer training (3 years - CFC)</label>
+        </div>
+      </div>
+
+      <!-- Q4: Customer Interaction -->
+      <div class="question">
+        <h3>4. Do you prefer roles with direct customer interaction or behind-the-scenes roles?</h3>
+        <div class="options">
+          <label><input type="radio" name="q4" value="Direct"> Direct customer interaction</label>
+          <label><input type="radio" name="q4" value="Behind the Scenes"> Behind-the-scenes roles</label>
+        </div>
+      </div>
+
+      <!-- Q5: Work Style -->
+      <div class="question">
+        <h3>5. Do you prefer creative work or analytical/technical tasks?</h3>
+        <div class="options">
+          <label><input type="radio" name="q5" value="Creative"> Creative work</label>
+          <label><input type="radio" name="q5" value="Analytical"> Analytical/technical tasks</label>
+        </div>
+      </div>
+
+      <!-- Q6: Teamwork -->
+      <div class="question">
+        <h3>6. Do you prefer working independently or as part of a team?</h3>
+        <div class="options">
+          <label><input type="radio" name="q6" value="Independent"> Independently</label>
+          <label><input type="radio" name="q6" value="Team"> As part of a team</label>
+        </div>
+      </div>
+
+      <!-- Q7: Work Setting -->
+      <div class="question">
+        <h3>7. What type of work setting do you envision?</h3>
+        <div class="options">
+          <label><input type="radio" name="q7" value="Office"> Office</label>
+          <label><input type="radio" name="q7" value="Workshop"> Workshop</label>
+          <label><input type="radio" name="q7" value="Laboratory"> Laboratory</label>
+          <label><input type="radio" name="q7" value="Outdoor"> Outdoor</label>
+        </div>
+      </div>
+
+      <!-- Q8: Skill Level -->
+      <div class="question">
+        <h3>8. How do you rate your problem-solving and communication skills?</h3>
+        <div class="options">
+          <label><input type="radio" name="q8" value="High"> High</label>
+          <label><input type="radio" name="q8" value="Moderate"> Moderate</label>
+          <label><input type="radio" name="q8" value="Low"> Low</label>
+        </div>
+      </div>
+
+      <!-- Q9: Stability -->
+      <div class="question">
+        <h3>9. Are you interested in jobs offering stability and long-term career growth?</h3>
+        <div class="options">
+          <label><input type="radio" name="q9" value="Yes"> Yes</label>
+          <label><input type="radio" name="q9" value="No"> No</label>
+        </div>
+      </div>
+
+      <!-- Q10: Routine vs Varied -->
+      <div class="question">
+        <h3>10. Do you prefer a profession with varied daily tasks or a structured routine?</h3>
+        <div class="options">
+          <label><input type="radio" name="q10" value="Varied"> Varied daily tasks</label>
+          <label><input type="radio" name="q10" value="Structured"> Structured routine</label>
+        </div>
+      </div>
+
+      <!-- Q11: Continuous Learning -->
+      <div class="question">
+        <h3>11. How important is continuous learning and professional development to you?</h3>
+        <div class="options">
+          <label><input type="radio" name="q11" value="Very Important"> Very important</label>
+          <label><input type="radio" name="q11" value="Somewhat Important"> Somewhat important</label>
+          <label><input type="radio" name="q11" value="Not Important"> Not important</label>
+        </div>
+      </div>
+
+      <!-- Q12: Industry Type -->
+      <div class="question">
+        <h3>12. Do you see yourself working in a traditional industry or in modern digital/innovative fields?</h3>
+        <div class="options">
+          <label><input type="radio" name="q12" value="Traditional"> Traditional industry</label>
+          <label><input type="radio" name="q12" value="Innovative"> Modern digital/innovative fields</label>
+        </div>
+      </div>
+
+      <!-- Q13: Exposure -->
+      <div class="question">
+        <h3>13. Would you prefer a career with international exposure or one that is more locally focused?</h3>
+        <div class="options">
+          <label><input type="radio" name="q13" value="International"> International exposure</label>
+          <label><input type="radio" name="q13" value="Local"> Locally focused</label>
+        </div>
+      </div>
+
+      <button type="submit">Submit Quiz</button>
+    </form>
+    <div class="result" id="result" style="display: none;"></div>
+  </div>
+
+  <script>
+    // Sample job profiles (expand this list with all available professions)
+    const jobs = [
+      {
+        title: "Agent de transport ferroviaire",
+        domain: "Logistics",
+        trainingApproach: "Practical",
+        trainingType: "CFC",
+        customerInteraction: "Behind the Scenes",
+        workStyle: "Analytical",
+        teamWork: "Team",
+        workSetting: "Outdoor",
+        skillLevel: "Moderate",
+        stability: "Yes",
+        routine: "Structured",
+        learning: "Somewhat Important",
+        industry: "Traditional",
+        exposure: "Local"
+      },
+      {
+        title: "Agent en information documentaire",
+        domain: "Media",
+        trainingApproach: "Theoretical",
+        trainingType: "CFC",
+        customerInteraction: "Direct",
+        workStyle: "Analytical",
+        teamWork: "Team",
+        workSetting: "Office",
+        skillLevel: "High",
+        stability: "Yes",
+        routine: "Varied",
+        learning: "Very Important",
+        industry: "Traditional",
+        exposure: "Local"
+      },
+      {
+        title: "Assistant en pharmacie",
+        domain: "Healthcare",
+        trainingApproach: "Practical",
+        trainingType: "CFC",
+        customerInteraction: "Direct",
+        workStyle: "Analytical",
+        teamWork: "Team",
+        workSetting: "Office",
+        skillLevel: "High",
+        stability: "Yes",
+        routine: "Structured",
+        learning: "Very Important",
+        industry: "Traditional",
+        exposure: "Local"
+      },
+      {
+        title: "Graphiste",
+        domain: "Media",
+        trainingApproach: "Practical",
+        trainingType: "CFC",
+        customerInteraction: "Direct",
+        workStyle: "Creative",
+        teamWork: "Independent",
+        workSetting: "Office",
+        skillLevel: "Moderate",
+        stability: "No",
+        routine: "Varied",
+        learning: "Somewhat Important",
+        industry: "Innovative",
+        exposure: "International"
+      },
+      {
+        title: "Coiffeur",
+        domain: "Arts",
+        trainingApproach: "Practical",
+        trainingType: "AFP",
+        customerInteraction: "Direct",
+        workStyle: "Creative",
+        teamWork: "Team",
+        workSetting: "Workshop",
+        skillLevel: "Moderate",
+        stability: "Yes",
+        routine: "Varied",
+        learning: "Somewhat Important",
+        industry: "Traditional",
+        exposure: "Local"
+      },
+      {
+        title: "Développeur de business numérique",
+        domain: "Technology",
+        trainingApproach: "Practical",
+        trainingType: "CFC",
+        customerInteraction: "Behind the Scenes",
+        workStyle: "Analytical",
+        teamWork: "Team",
+        workSetting: "Office",
+        skillLevel: "High",
+        stability: "Yes",
+        routine: "Varied",
+        learning: "Very Important",
+        industry: "Innovative",
+        exposure: "International"
+      },
+      {
+        title: "Boulanger-pâtissier-confiseur",
+        domain: "Other",
+        trainingApproach: "Practical",
+        trainingType: "AFP",
+        customerInteraction: "Direct",
+        workStyle: "Creative",
+        teamWork: "Team",
+        workSetting: "Workshop",
+        skillLevel: "Moderate",
+        stability: "Yes",
+        routine: "Structured",
+        learning: "Somewhat Important",
+        industry: "Traditional",
+        exposure: "Local"
+      },
+      {
+        title: "Assistant en soins et santé communautaire",
+        domain: "Healthcare",
+        trainingApproach: "Practical",
+        trainingType: "CFC",
+        customerInteraction: "Direct",
+        workStyle: "Analytical",
+        teamWork: "Team",
+        workSetting: "Office",
+        skillLevel: "High",
+        stability: "Yes",
+        routine: "Structured",
+        learning: "Very Important",
+        industry: "Traditional",
+        exposure: "Local"
+      }
+    ];
+
+    // Mapping of quiz question names to job attribute keys
+    const attributeMap = {
+      q1: "domain",
+      q2: "trainingApproach",
+      q3: "trainingType",
+      q4: "customerInteraction",
+      q5: "workStyle",
+      q6: "teamWork",
+      q7: "workSetting",
+      q8: "skillLevel",
+      q9: "stability",
+      q10: "routine",
+      q11: "learning",
+      q12: "industry",
+      q13: "exposure"
+    };
+
+    document.getElementById('quizForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Collect quiz answers
+      let answers = {};
+      for (let i = 1; i <= 13; i++) {
+        let response = document.querySelector('input[name="q' + i + '"]:checked');
+        answers["q" + i] = response ? response.value : null;
+      }
+      
+      // Score each job based on matching attributes
+      jobs.forEach(job => {
+        let score = 0;
+        for (let key in attributeMap) {
+          if (answers[key] && answers[key] === job[attributeMap[key]]) {
+            score++;
+          }
+        }
+        job.score = score;
+      });
+      
+      // Sort jobs by score (highest first)
+      const sortedJobs = jobs.sort((a, b) => b.score - a.score);
+      
+      // Show top 3 recommendations (you can adjust the number)
+      let resultHTML = '<h2>Your Top Career Recommendations</h2>';
+      resultHTML += '<p>Based on your responses, here are the careers that best match your preferences:</p>';
+      resultHTML += '<ol>';
+      sortedJobs.slice(0, 3).forEach(job => {
+        resultHTML += `<li><strong>${job.title}</strong> (Match Score: ${job.score}/13)</li>`;
+      });
+      resultHTML += '</ol>';
+      
+      document.getElementById('result').innerHTML = resultHTML;
+      document.getElementById('result').style.display = 'block';
+    });
+  </script>
+</body>
+</html>
